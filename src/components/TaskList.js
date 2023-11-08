@@ -53,7 +53,7 @@ const fetchTasks = async () => {
         });
   
         if (response.ok) {
-          setTaskList(taskList.filter((item) => item.id !== taskId));
+          setTaskList(taskList.filter((item) => item.Id !== taskId));
         } else {
           console.error("Failed to delete task");
         }
@@ -77,7 +77,7 @@ const fetchTasks = async () => {
         <button onClick={handleAddTaskClick}>Add Task</button>
         {taskList.map((item, index) => (
             <p key={index}>
-                <Task taskName={item.taskName} taskId={item.id} onDelete={deleteTask}/>
+                <Task taskName={item.taskName} taskId={item.Id} onDelete={deleteTask}/>
             </p>
         ))}
     </>

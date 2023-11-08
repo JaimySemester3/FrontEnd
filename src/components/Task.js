@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import './App.css';
+import '../App.css';
 
 function Task(props) {
   const [task, setTask] = useState({
