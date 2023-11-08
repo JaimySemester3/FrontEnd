@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import './App.css';
+import '../App.css';
 
 function Task(props) {
   const [task, setTask] = useState({
@@ -25,6 +25,10 @@ function Task(props) {
       .catch(error => console.error(error));
   }
   
+  const handleDeleteClick = () => {
+    props.onDelete(props.taskId);
+  };
+
   useEffect(() => {
     setTask(previousState => {
         return {...previousState, task : props.taskName}
@@ -33,8 +37,9 @@ function Task(props) {
 
   return (
     <>
-      <p>{task.name} {String(task.isCompleted)}</p>
+      <p>{task.name}</p>
       <button onClick={updateIsCompleted}>Complete</button>
+      <button onClick={handleDeleteClick}>Delete</button>
     </>
   );
 }
