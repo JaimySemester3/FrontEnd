@@ -11,7 +11,7 @@ function Task(props) {
     setTask(previousState => {
       return {...previousState, isCompleted: true}
     });
-    fetch(`https://localhost:7140/api/Task/${props.taskId}`, {
+    fetch(`http://localhost:7140/api/Task/${props.taskId}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
