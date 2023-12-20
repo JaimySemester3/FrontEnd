@@ -7,7 +7,7 @@ const [newTaskName, setNewTaskName] = useState("");
 
 const fetchTasks = async () => {
   try {
-    const response = await fetch("http://localhost:7140/api/Tasks");
+    const response = await fetch("https://localhost:7140/api/Tasks");
     if (response.ok) {
       const data = await response.json();
       setTaskList(data);
@@ -24,7 +24,7 @@ const fetchTasks = async () => {
     }, [])
     const addTask = async (taskName) => {
       try {
-        const response = await fetch("http://localhost:7140/api/Tasks", {
+        const response = await fetch("https://localhost:7140/api/Tasks", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -48,7 +48,7 @@ const fetchTasks = async () => {
 
     const deleteTask = async (taskId) => {
       try {
-        const response = await fetch(`http://localhost:7140/api/Tasks/${taskId}`, {
+        const response = await fetch(`https://localhost:7140/api/Tasks/${taskId}`, {
           method: "DELETE",
         });
   
