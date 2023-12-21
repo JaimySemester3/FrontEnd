@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import '../App.css';
+import Button from '@mui/material/Button';
 
 function Task(props) {
   const [task, setTask] = useState({
@@ -38,8 +39,8 @@ function Task(props) {
   return (
     <>
       <p>{task.name}</p>
-      <button onClick={updateIsCompleted}>Complete</button>
-      <button onClick={handleDeleteClick}>Delete</button>
+      <Button variant="contained" onClick={updateIsCompleted}>Complete</Button>
+      <Button variant="contained" onClick={handleDeleteClick}>Delete</Button>
     </>
   );
 }

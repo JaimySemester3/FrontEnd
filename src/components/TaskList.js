@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react"
 import Task from "./Task.js";
+import Button from '@mui/material/Button';
+import { TextField } from "@mui/material";
 
 function TaskList() {
 const [taskList, setTaskList] = useState([]);
@@ -73,8 +75,8 @@ const fetchTasks = async () => {
 
   return (
     <>
-        <input type="text" value={newTaskName} onChange={handleNewTaskNameChange} />
-        <button onClick={handleAddTaskClick}>Add task</button>
+        <TextField id="standard-basic" label="Standard" variant="standard" type="text" value={newTaskName} onChange={handleNewTaskNameChange} TextField/>
+        <Button variant="contained" onClick={handleAddTaskClick}>Add task</Button>
         {taskList.map((item, index) => (
             <p key={index}>
                 <Task taskName={item.taskName} taskId={item.Id} onDelete={deleteTask}/>
