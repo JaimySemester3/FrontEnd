@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import Task from "./Task.js";
+import Button from '@mui/material/Button';
+import { TextField } from "@mui/material";
 
 function TaskList() {
     const [taskList, setTaskList] = useState([]);
@@ -109,7 +111,6 @@ function TaskList() {
     const handleNewTaskNameChange = (event) => {
         setNewTaskName(event.target.value);
     };
-
     return (
         <>
             <input type="text" value={newTaskName} onChange={handleNewTaskNameChange}/>
