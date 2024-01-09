@@ -11,7 +11,9 @@ function TaskList() {
             const response = await fetch("https://localhost:7140/api/Tasks");
             if (response.ok) {
                 const data = await response.json();
-                setTaskList(data);
+                const sortedTasks = data.sort((a, b) => a.Priority - b.Priority);
+
+                setTaskList(sortedTasks);
             } else {
                 console.error("Failed to fetch tasks");
             }
@@ -22,6 +24,7 @@ function TaskList() {
 
     useEffect(() => {
         fetchTasks()
+        console.log(taskList);
     }, [])
     const addTask = async (taskName) => {
         try {
